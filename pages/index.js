@@ -1,19 +1,41 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
+import { getSortedPostsData } from './lib/posts'
 
-export default function Home() {
+//  2 OBJ allPostsData COMO PARAMETRO DA FUNCAO
+export default function Home ({ allPostsData }) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>
-          (Esse exemplo foi feito pelo tutorial do Next.js{' '}
-          <a href="https://nextjs.org/learn">Vem na vibe sinistra</a>.)
-        </p>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Props abaixo que passei pelo getStaticProps</h2>
+        <ul className={utilStyles.list}>
+          {/* allPostsData.map PRA RENDERIZAR CADA ITEM DO OBJ */}
+          { allPostsData.map(({ id, date, title }) => (
+            <li className={utilStyles.listItem} key={id}>
+              Title: - {title}
+              <br />
+              ID do arquivo é o nome: {id}
+              <br />
+              Data: - {date}
+              <hr/>
+            </li>
+            ))
+          }
+        </ul>
       </section>
     </Layout>
   )
+}
+//  1 USANDO getStaticProps() PARA RETORNAR OS PROPS INSTANCIADOS NO CONST allPostsData QUE RECEBE VALOR DA FUNÇÃO QUE RETORNA O METADATA COMO OBJ
+export async function getStaticProps() {
+  const allPostsData = getSortedPostsData()
+  return {
+    props: {
+      allPostsData
+    }
+  }
 }
