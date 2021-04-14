@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from './lib/posts'
+import Link from 'next/link'
+import Date from '../components/date'
 
 //  2 OBJ allPostsData COMO PARAMETRO DA FUNCAO
 export default function Home ({ allPostsData }) {
@@ -16,11 +18,13 @@ export default function Home ({ allPostsData }) {
           {/* allPostsData.map PRA RENDERIZAR CADA ITEM DO OBJ */}
           { allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              Title: - {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              ID do arquivo é o nome: {id}
-              <br />
-              Data: - {date}
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
               <hr/>
             </li>
             ))
