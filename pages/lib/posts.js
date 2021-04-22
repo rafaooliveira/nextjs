@@ -52,7 +52,7 @@ export function getSortedPostsData() {
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory)
 
-  // exemplo de um retorno de array:
+  // Returns an array that looks like this:
   // [
   //   {
   //     params: {
@@ -68,7 +68,6 @@ export function getAllPostIds() {
   return fileNames.map(fileName => {
     return {
       params: {
-        // retira o .md no retorno dos nomes de cada arquivo
         id: fileName.replace(/\.md$/, '')
       }
     }
