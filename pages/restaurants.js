@@ -11,7 +11,7 @@ export default function Restaurants ({ dataProps }){
           { dataProps.restaurants.map(({ id, name, description }) => (
             <li className={utilStyles.listItem} key={id}>
                 <p><strong>Nome:</strong> {name}</p>
-                <p><strong>Descrição</strong> {description}</p>
+                <p><strong>Descrição:</strong> {description}</p>
               <hr/>
             </li>
             ))
