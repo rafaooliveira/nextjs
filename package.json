@@ -22,7 +22,7 @@
     "styled-components": "5.2.3"
   },
   "devDependencies": {
-    "date-fns": "^2.20.3",
+    "date-fns": "^2.21.3",
     "graphql": "15.5.0",
     "graphql-request": "3.4.0",
     "gray-matter": "4.0.2",
