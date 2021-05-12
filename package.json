@@ -11,11 +11,12 @@
     "start": "next start -p $PORT"
   },
   "dependencies": {
-    "gray-matter": "4.0.2",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
     "graphql": "15.5.0",
     "graphql-request": "3.4.0",
+    "gray-matter": "4.0.2",
+    "next": "10.2.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
     "react-flexbox-grid": "2.1.2",
     "remark": "13.0.0",
     "remark-html": "13.0.1",
@@ -26,7 +27,6 @@
     "graphql": "15.5.0",
     "graphql-request": "3.4.0",
     "gray-matter": "4.0.2",
-    "next": "^10.2.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-flexbox-grid": "2.1.2",
