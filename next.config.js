@@ -9,7 +9,4 @@ module.exports = {
 
     return config
   },
-  env: {
-    NEXT_PUBLIC_GRAPHQL_BASE_URL: process.env.NEXT_PUBLIC_GRAPHQL_BASE_URL,
-  }
 }
