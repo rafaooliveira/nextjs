@@ -35,20 +35,6 @@ export function getSortedPostsData() {
     }
   })
 }
-// exemple to fetch a api route
-// export async function getAllPostIds() {
-//   // Instead of the file system,
-//   // fetch post data from an external API endpoint
-//   const res = await fetch('..')
-//   const posts = await res.json()
-//   return posts.map(post => {
-//     return {
-//       params: {
-//         id: post.id
-//       }
-//     }
-//   })
-// }
 export function getAllPostIds() {
   const fileNames = fs.readdirSync(postsDirectory)
 
