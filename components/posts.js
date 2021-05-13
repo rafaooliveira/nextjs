@@ -51,6 +51,7 @@ export function getAllPostIds() {
   //     }
   //   }
   // ]
+  
   return fileNames.map(fileName => {
     return {
       params: {
